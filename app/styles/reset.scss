@@ -1,0 +1,89 @@
+@import "variables.scss";
+@import "compass";
+
+body {
+  padding-bottom: 20px;
+}
+
+.header,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header {
+  background-color: transparent;
+  margin-top: 10px;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
+
+.container {
+
+  width: 100% !important;
+
+  &.lighter {
+    background-color: $color-darker;
+  }
+
+  &.darker {
+    background-color: #333333;
+  }
+}
+
+.wrap {
+  width: 75%;
+  margin: 0 auto;
+
+  @media (max-width: $large-screen-min) {
+    width: 100%;
+  }
+
+}
+
+.thumbnail {
+  &.lighter {
+    background-color: $color-darker;
+    border: none !important;
+  }
+}
+
+.background-pattern-squares {
+  background-image: url('../images/patterns/squares.png');
+}
+

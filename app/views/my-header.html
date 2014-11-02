@@ -1,0 +1,64 @@
+<div class="container darker">
+  <div class="wrap">
+    <div class="header">
+      <ul class="nav nav-pills pull-right">
+        <li ng-if="session.name === undefined">
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">
+            Se connecter
+          </button>
+        </li>
+        <li ng-if="session.name !== undefined">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              {{session.name}} <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Profil</a></li>
+              <li class="divider"></li>
+              <li><a ng-click="sendLogoutForm()">Deconnexion</a></li>
+            </ul>
+          </div>
+        </li>
+        <!-- Modal -->
+        <div class="modal fade" id="loginModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span><span
+                  class="sr-only">Close</span></button>
+                <h4 class="modal-title">Se connecter</h4>
+              </div>
+              <form class="form-horizontal" ng-submit="sendLoginForm(credentials)">
+                <div class="modal-body">
+
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputEmail" placeholder="adresse@mail.com"
+                             ng-model="credentials.mail">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword" class="col-sm-2 control-label">Mot de passe</label>
+
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe"
+                             ng-model="credentials.pwd">
+                    </div>
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="reset" class="btn btn-default">Effacer</button>
+                  <button type="submit" class="btn btn-primary">Connexion</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </ul>
+      <h3 class="text-muted">Conduire smart</h3>
+    </div>
+  </div>
+</div>

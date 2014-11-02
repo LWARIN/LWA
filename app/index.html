@@ -17,72 +17,14 @@
 </head>
 <body ng-app="conduireSmartApp">
 
-<!-- Add your site or application content here -->
-<div class="container darker" ng-controller="AppCtrl">
-  <div class="wrap">
-    <div class="header">
-      <ul class="nav nav-pills pull-right">
-        <li class="active"><a ng-href="#">Accueil</a></li>
-        <li><a ng-href="#/driver">Driver</a></li>
-        <li><a ng-href="#/instructor">Instructor</a></li>
-        <li><a ng-href="#/manager">Manager</a></li>
-        <li>
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">
-            Se connecter
-          </button>
-        </li>
-        <!-- Modal -->
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-             aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                  class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Se connecter</h4>
-              </div>
-              <form class="form-horizontal" ng-submit="sendLoginForm(credentials)">
-              <div class="modal-body">
-
-                  <div class="form-group">
-                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail" placeholder="adresse@mail.com"
-                             ng-model="credentials.mail">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword" class="col-sm-2 control-label">Mot de passe</label>
-
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe"
-                             ng-model="credentials.pwd">
-                    </div>
-                  </div>
-
-              </div>
-              <div class="modal-footer">
-                <button type="reset" class="btn btn-default">Effacer</button>
-                <button type="submit" class="btn btn-primary">Connexion</button>
-
-              </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </ul>
-      <h3 class="text-muted">Conduire smart</h3>
-    </div>
-  </div>
-</div>
+<my-header></my-header>
 
 <div ng-view=""></div>
 
 <div class="container">
   <div class="wrap">
     <div class="footer">
-      <p><span class="glyphicon glyphicon-copyright-mark"></span> LWA Company all rights reserved.</p>
+      <p><span class="glyphicon glyphicon-copyright-mark"></span> Conduire smart all rights reserved.</p>
     </div>
   </div>
 </div>
@@ -125,7 +67,7 @@
 <script src="scripts/constants/roles.js"></script>
 <script src="scripts/constants/credentials.js"></script>
 <script src="scripts/constants/main.js"></script>
-<script src="scripts/controllers/app.js"></script>
+<script src="scripts/directives/myHeader.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/driver.js"></script>
 <script src="scripts/controllers/instructor.js"></script>
