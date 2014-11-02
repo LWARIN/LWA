@@ -3,6 +3,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import "compass";
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -48,15 +50,13 @@ body {
   margin: 30px 0;
 }
 
+$color-darker: #E7E7E7;
+
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
+  background-color: $color-darker;
 }
 
 /* Supporting marketing content */
@@ -71,7 +71,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    //max-width: 730px;
   }
 
   /* Remove the padding we set earlier */
@@ -88,5 +88,86 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+}
+
+$form-background: #FFF;
+$form-input-background: #F4F4F4;
+
+@each $input-type in text, password, email {
+  input[type=#{$input-type}] {
+    @include border-radius(4px, 4px);
+    @include transition(border-color 0.4s);
+
+    background: $form-input-background;
+    border: 1px solid $form-input-background;
+    width: 100%;
+    margin-bottom: 0.8em;
+    padding: 0.8em;
+    text-align: center;
+    outline: none;
+
+    &:hover {
+      border-color: #70D572;
+    }
+  }
+}
+
+$btn-colors-1: (
+  submit: #70D572,
+  cancel: #DD4B39
+);
+
+$btn-colors-2: (
+  submit: #60BA62,
+  cancel: #B93E2E
+);
+
+@each $button-type in submit, cancel {
+  .btn-#{$button-type} {
+    background: map-get($btn-colors-1, $button-type);
+    color: #FFF;
+    text-align: center;
+    min-width: 100px;
+    padding: 0.8em;
+    border: 1px solid map-get($btn-colors-1, $button-type);
+    @include border-radius(4px, 4px);
+    border-bottom: 3px solid map-get($btn-colors-2, $button-type);
+    @include transition(0.5s all);
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid map-get($btn-colors-2, $button-type);
+      border-bottom: 3px solid map-get($btn-colors-1, $button-type);
+    }
+  }
+}
+
+$large-screen-min: 768px;
+
+.container {
+
+  width: 100% !important;
+
+  &.darker {
+    background-color: $color-darker;
+  }
+}
+
+.wrap {
+  width: 75%;
+  margin: 0 auto;
+
+  @media (max-width: $large-screen-min) {
+    width: 100%;
+  }
+
+}
+
+.thumbnail {
+  &.darker {
+    background-color: $color-darker;
+    border: none !important;
   }
 }

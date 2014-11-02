@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('lwaApp', [
+  .module('conduireSmartApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -23,9 +23,17 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/driver', {
+        templateUrl: 'views/driver.html',
+        controller: 'DriverCtrl'
+      })
+      .when('/instructor', {
+        templateUrl: 'views/instructor.html',
+        controller: 'InstructorCtrl'
+      })
+      .when('/manager', {
+        templateUrl: 'views/manager.html',
+        controller: 'ManagerCtrl'
       })
       .otherwise({
         redirectTo: '/'

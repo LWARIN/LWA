@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="wrap">
+
+    <ul class="nav nav-pills">
+      <li ng-class="getCssTab(0)"><a ng-click="switchTab(0)">Code</a></li>
+      <li ng-class="getCssTab(1)"><a ng-click="switchTab(1)">Conduite</a></li>
+    </ul>
+    {{selectedTab}}
+    <!-- Tab code -->
+    <div class="row" ng-show="selectedTab === 0">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <p class="text-center">
+            <i class="fa fa-book fa-5x"></i>
+          </p>
+
+          <div class="caption">
+            <h3>Leçons</h3>
+
+            <p>Lorem ipsum dolor sit amet</p>
+
+            <p>
+              <a href="#" class="btn btn-lg btn-success">GO</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <p class="text-center">
+            <i class="fa fa-lightbulb-o fa-5x"></i>
+          </p>
+
+          <div class="caption">
+            <h3>Entraînements</h3>
+
+            <p>Lorem ipsum dolor sit amet</p>
+
+            <p>
+              <a href="#" class="btn btn-lg btn-success">GO</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <p class="text-center">
+            <i class="fa fa-graduation-cap fa-5x"></i>
+          </p>
+
+          <div class="caption">
+            <h3>Examen</h3>
+
+            <p>Lorem ipsum dolor sit amet</p>
+
+            <p>
+              <a href="#" class="btn btn-lg btn-success">GO</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab conduite -->
+    <div class="row" ng-show="selectedTab === 1">
+      <div class="col-sm-6 col-md-6">
+        <div class="thumbnail">
+          <p class="text-center">
+            <i class="fa fa-car fa-5x"></i>
+          </p>
+
+          <div class="caption">
+            <h3>Informations</h3>
+
+            <p>Lorem ipsum dolor sit amet</p>
+
+            <p>
+              <a href="#" class="btn btn-lg btn-success">GO</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-6">
+        <div class="thumbnail">
+          <p class="text-center">
+            <i class="fa fa-calendar fa-5x"></i>
+          </p>
+
+          <div class="caption">
+            <h3>Calendrier</h3>
+
+            <p>Lorem ipsum dolor sit amet</p>
+
+            <p>
+              <a href="#" class="btn btn-lg btn-success">GO</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
