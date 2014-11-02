@@ -1,172 +1,57 @@
-<div class="container darker">
+<div class="container lighter background-pattern-squares">
   <div class="wrap">
+    <div ng-model="message" ng-show="showMessage" class="message fadein fadeout">{{message}}</div>
     <div class="jumbotron">
-      <h1>Conduire Smart {{selectedTab}}</h1>
+      <h1>Conduire Smart</h1>
 
-      <p class="lead">
-        <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-        Lorem ipsum dolor sit amet
-      </p>
+      <h2>The world's best app for</h2>
+
+      <h2>{{fadeText}}</h2>
+
     </div>
   </div>
 </div>
 <div class="container">
   <div class="wrap">
 
-    <div class="row">
-      <h1>Notre offre</h1>
+    <h1>{{product.title}}</h1>
 
-      <h3>Lorem ipsum dolor sit amet.</h3>
+    <h3>{{product.subtitle}}</h3>
 
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="images/yeoman.png">
+    <div ng-repeat="elem in product.thumbnails" class="col-sm-6 col-md-{{12 / product.thumbnails.length}}">
+      <div class="thumbnail">
+        <img src="images/yeoman.png">
 
-          <div class="caption">
-            <h3>Apprentis conducteurs</h3>
+        <div class="caption">
+          <h3>{{elem.title}}</h3>
 
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="images/yeoman.png">
-
-          <div class="caption">
-            <h3>Moniteurs de conduite</h3>
-
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="images/yeoman.png">
-
-          <div class="caption">
-            <h3>Gérants d'auto-école</h3>
-
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
+          <p class="text-justify">{{elem.text}}</p>
         </div>
       </div>
     </div>
+
   </div>
 </div>
-<div class="container darker">
+<div class="container lighter">
   <div class="wrap">
-    <div class="row">
-      <h1>Nos engagements</h1>
 
-      <h3>Lorem ipsum dolor sit amet.</h3>
+    <h1>{{company.title}}</h1>
 
-      <div class="col-sm-6 col-md-3">
-        <div class="thumbnail darker">
-          <p class="text-center">
-            <i class="fa fa-cogs fa-5x"></i>
-          </p>
+    <h3>{{company.subtitle}}</h3>
 
-          <div class="caption">
-            <h3>Valeur 1</h3>
+    <div ng-repeat="elem in company.thumbnails" class="col-sm-6 col-md-{{12 / company.thumbnails.length}}">
+      <div class="thumbnail lighter">
+        <p class="text-center">
+          <i class="fa {{elem.image}} fa-5x"></i>
+        </p>
 
-            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-        </div>
-      </div>
+        <div class="caption">
+          <h3>{{elem.title}}</h3>
 
-      <div class="col-sm-6 col-md-3">
-        <div class="thumbnail darker">
-          <p class="text-center">
-            <i class="fa fa-comments-o fa-5x"></i>
-          </p>
-
-          <div class="caption">
-            <h3>Valeur 2</h3>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-3">
-        <div class="thumbnail darker">
-          <p class="text-center">
-            <i class="fa fa-line-chart fa-5x"></i>
-          </p>
-
-          <div class="caption">
-            <h3>Valeur 3</h3>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="thumbnail darker">
-          <p class="text-center">
-            <i class="fa fa-tasks fa-5x"></i>
-          </p>
-
-          <div class="caption">
-            <h3>Valeur 4</h3>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat.</p>
-          </div>
+          <p class="text-justify">{{elem.text}}</p>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="container">
-  <div class="wrap">
-    <div class="row">
-      <h1>Se connecter</h1>
 
-      <h3>Lorem ipsum dolor sit amet. + {{credentials.mail}} - {{credentials.pwd}}</h3>
-    </div>
-    <form class="form-horizontal" ng-submit="sendLoginForm()">
-      <div class="form-group">
-        <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-
-        <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputEmail" placeholder="adresse@mail.com"
-                 ng-model="credentials.mail">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="inputPassword" class="col-sm-2 control-label">Mot de passe</label>
-
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe"
-                 ng-model="credentials.pwd">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" ng-model="credentials.remember"> Mémoriser mes identifiants
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="reset" class="btn-cancel">Effacer</button>
-          <button type="submit" class="btn-submit">Connexion</button>
-        </div>
-      </div>
-    </form>
   </div>
 </div>

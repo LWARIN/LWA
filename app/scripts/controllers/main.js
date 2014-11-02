@@ -8,19 +8,29 @@
  * Controller of the lwaApp
  */
 angular.module('conduireSmartApp')
-  .controller('MainCtrl', ['authenticationService', function ($scope, authenticationService) {
-    $scope.selectedTab = 1500;
-    $scope.credentials = {
-      mail: 'lwa@pe.com',
-      pwd: 'toto',
-      remember: false
-    };
+  .controller('MainCtrl', ['$scope', '$timeout', 'mainText',
+    function ($scope, $timeout, mainText) {
 
-    $scope.sendLoginForm = function () {
-      if (authenticationService.login($scope.credentials.mail, $scope.credentials.pwd)) {
-        window.console.log('CONNECT : ' + $scope.credentials.mail + ' - ' + $scope.credentials.pwd + ' - FAILED ! ');
-      } else {
-        window.console.log('CONNECT : ' + $scope.credentials.mail + ' - ' + $scope.credentials.pwd + ' - SUCCESS !');
-      }
-    };
-  }]);
+      // Scope definitions
+      $scope.product = mainText.PRODUCT;
+      $scope.company = mainText.COMPANY;
+
+      // Text fade in out
+      var fadeCounter = 0;
+
+      $scope.onTimeout = function () {
+        fadeCounter++;
+        if (fadeCounter >= mainText.PROFILES.length) {
+          fadeCounter = 0;
+        }
+        $scope.fadeText = mainText.PROFILES[fadeCounter];
+        mytimeout = $timeout($scope.onTimeout, 1500);
+      };
+
+      var mytimeout = $timeout($scope.onTimeout, 1500);
+
+      $scope.stop = function () {
+        $timeout.cancel(mytimeout);
+      };
+
+    }]);
